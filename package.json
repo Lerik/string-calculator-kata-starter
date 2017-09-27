@@ -1,0 +1,17 @@
+{
+  "name": "string-calculator-kata-starter",
+  "version": "0.1.0",
+  "description": "A starter project to demonstrate the power of TDD and distributed pair programming using a simple string calculator kata.",
+  "main": "calculator.js",
+  "repository": "",
+  "author": "Byron Sommardahl <byron@acklenavenue.com>",
+  "scripts": {
+    "specs": "mocha ./**/*.specs.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  }
+}
