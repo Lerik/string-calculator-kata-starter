@@ -8,8 +8,7 @@
   "scripts": {
     "specs": "mocha ./**/*.specs.js"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "*",
     "mocha": "*"
