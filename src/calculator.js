@@ -2,10 +2,13 @@
 
 class Calculator {
   add(nums) {
-    if (nums)
-      return parseInt(nums);
+    // TO MUCH CODE - REFACTOR NOW
+    var result = nums
+      .split(',')
+      .map(num => Number(num))
+      .reduce((current, accumulate) => current + accumulate);
 
-    return 0;
+    return result;
   }
 }
 

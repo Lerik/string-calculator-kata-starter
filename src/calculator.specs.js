@@ -29,6 +29,12 @@ describe('The calculator', () => {
                 calculator.add('3,4').should.equal(7);
             });
         });
+
+        describe('when the input contains multiple numbers', () => {
+            it('it should return the sum of all those numbers', () => {
+                calculator.add('3,4,5,10').should.equal(22);
+            });
+        });
     });
 
 
