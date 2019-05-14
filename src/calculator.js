@@ -2,8 +2,8 @@
 
 class Calculator {
     
-   add() {
-    return 0;
+   add(number) {
+       return number === '' ? 0 : number; 
    } 
 }
 
