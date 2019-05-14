@@ -11,16 +11,22 @@ describe('The calculator', () => {
         calculator = new Calculator();
     });
 
-    describe('METHOD: add', () => {
-        describe('WHEN the parameter is an empty string', () => {
+    describe('can add numbers together', () => {
+        describe('when the input is empty', () => {
             it('should return 0', () => {
                 calculator.add("").should.equal(0);
             });
         });
 
-        describe('WHEN the parameter contains one number', () => {
+        describe('when the input contains one number', () => {
             it('should return that same number', () => {
                 calculator.add('7').should.equal(7);
+            });
+        });
+
+        describe('when the input contains two numbers', () => {
+            it('it should return the sum of those two numbers', () => {
+                calculator.add('3,4').should.equal(7);
             });
         });
     });
