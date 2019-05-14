@@ -12,8 +12,7 @@ describe('The calculator', () => {
     
     describe('can add some numbers', () => {
         it('should accept an empty string and return 0', () => {
-            var result = calculator.add('');
-            result.should.equal(0);
+            calculator.add('').should.equal(0);
         });
     });
 });
