@@ -10,9 +10,16 @@ describe('The calculator', () => {
         calculator = new Calculator();
     });
     
-    describe('can add some numbers', () => {
-        it('should accept an empty string and return 0', () => {
-            calculator.add('').should.equal(0);
+    describe('METHOD: add', () => {
+        describe('WHEN the parameter is an empty string', () => {
+            it('should return 0', () => {
+                calculator.add('').should.equal(0);
+            });
+        });
+        describe('WHEN the parameter is one number', () => {
+            it('should return the same parameter', () => {
+                calculator.add(5).should.equal(5);
+            });
         });
     });
 });
