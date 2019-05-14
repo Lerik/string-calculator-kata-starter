@@ -11,11 +11,19 @@ describe('The calculator', () => {
         calculator = new Calculator();
     });
 
-    describe('can add some numbers', () => {
-        it('should accept an empty string and return 0', () => {
-            var result = calculator.add("");
-            result.should.equal(0);
+    describe('METHOD: add', () => {
+        describe('WHEN the parameter is an empty string', () => {
+            it('should return 0', () => {
+                calculator.add("").should.equal(0);
+            });
+        });
+
+        describe('WHEN the parameter contains one number', () => {
+            it('should return that same number', () => {
+                calculator.add('7').should.equal(7);
+            });
         });
     });
+
 
 });
