@@ -2,13 +2,15 @@
 
 class Calculator {
   add(nums) {
-    // TO MUCH CODE - REFACTOR NOW
-    var result = nums
+    var numsFormatted = nums
       .split(',')
-      .map(num => Number(num))
-      .reduce((current, accumulate) => current + accumulate);
+      .map(num => Number(num));
 
-    return result;
+    if (numsFormatted.length === 1) {
+      return numsFormatted[0];
+    } else {
+      return numsFormatted[0] + numsFormatted[1];
+    }
   }
 }
 
