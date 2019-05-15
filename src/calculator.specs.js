@@ -35,6 +35,12 @@ describe('The calculator', () => {
                 calculator.add('3,4,5,10').should.equal(22);
             });
         });
+
+        describe('when delimiting an unknown quantity of numbers by comma and new line to get the sum', () => {
+           it('should allow new lines as a delimiter', () => {
+               calculator.add('3\n4,5\n10').should.equal(22);
+           }); 
+        });
     });
 
 
