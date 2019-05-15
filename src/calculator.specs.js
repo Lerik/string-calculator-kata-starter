@@ -61,7 +61,8 @@ describe('The calculator', () => {
                     catch (ex) {
                         error = ex;
                     }
-                    error.badNumbers.should.contain([-1, -3]);
+                    error.badNumbers[0].should.equal(-1);
+                    error.badNumbers[1].should.equal(-3);
                 });
             });
         });

@@ -1,20 +1,28 @@
 'use strict';
 
 class Calculator {
-  add(nums) {
+  add(numsAsStr) {
     var delimiter = ',';
 
-    if (nums.startsWith('//')) {
-      const thirdCharacter = nums[2];
+    if (numsAsStr.startsWith('//')) {
+      const thirdCharacter = numsAsStr[2];
       delimiter = thirdCharacter;
     }
 
-    return nums
+
+    var numbers = numsAsStr
       .replace(`//${delimiter}\n`, '')
       .split(delimiter)
       .flatMap(item => item.split('\n'))
-      .map(num => Number(num))
-      .reduce((num, acc) => num + acc);
+      .map(num => Number(num));
+      
+    var badNumbers = numbers.filter(num => num < 0);
+
+    if (badNumbers.length > 0) {
+      throw { badNumbers };
+    }
+
+    return numbers.reduce((num, acc) => num + acc);
   }
 }
 
