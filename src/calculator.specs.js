@@ -1,7 +1,8 @@
 'use strict';
 
 var Calculator = require('../src/calculator.js');
-var should = require('chai').should();
+require('chai').should();
+const expect = require('chai').expect;
 
 describe('The calculator', () => {
 
@@ -31,22 +32,40 @@ describe('The calculator', () => {
         });
 
         describe('when the input contains multiple numbers', () => {
-            it('it should return the sum of all those numbers', () => {
-                calculator.add('3,4,5,10').should.equal(22);
+            describe('when using the default comma delimiter', () => {
+                it('it should return the sum of all those numbers', () => {
+                    calculator.add('3,4,5,10').should.equal(22);
+                });
+            });
+
+            describe('when delimiting by comma and new line', () => {
+                it('should allow new lines as a delimiter', () => {
+                    calculator.add('3\n4,5\n10').should.equal(22);
+                });
+            });
+
+            describe('when delimiting by a custom delimiter', () => {
+                it('should allow any type of non-digit character as delimiter', () => {
+                    calculator.add('//;\n1;2').should.equal(3);
+                });
+            });
+
+            describe('when negative numbers are included', () => {
+                it('should throw an exception telling which numbers are unsupported', () => {
+                    var error = {
+                        badNumbers: []
+                    };
+                    try {
+                        calculator.add('-1,2,-3,4');
+                    }
+                    catch (ex) {
+                        error = ex;
+                    }
+                    error.badNumbers.should.contain([-1, -3]);
+                });
             });
         });
 
-        describe('when delimiting an unknown quantity of numbers by comma and new line to get the sum', () => {
-           it('should allow new lines as a delimiter', () => {
-               calculator.add('3\n4,5\n10').should.equal(22);
-           }); 
-        });
-
-        describe('when delimiting an unknown quantity of number by a predetermined delimiter', () => {
-            it('should allow any type of non-digit character as delimiter', () => {
-                calculator.add('//;\n1;2').should.equal(3);
-            });
-        });
     });
 
 
