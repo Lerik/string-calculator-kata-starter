@@ -41,6 +41,12 @@ describe('The calculator', () => {
                calculator.add('3\n4,5\n10').should.equal(22);
            }); 
         });
+
+        describe('when delimiting an unknown quantity of number by a predetermined delimiter', () => {
+            it('should allow any type of non-digit character as delimiter', () => {
+                calculator.add('//;\n1;2').should.equal(3);
+            });
+        });
     });
 
 
