@@ -15,7 +15,3 @@ To run the specs, simply run gulp:
 ```
 npm run specs
 ```
-
-## Coding the Kata
-
-We will be working through Roy Osherove's ["String Calculator Kata"](http://osherove.com/tdd-kata-1/) in this exercise.
