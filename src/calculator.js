@@ -8,11 +8,13 @@ class Calculator {
 
     const numbersAsArray = numbers.split(',');
 
-    if (numbersAsArray.length == 1) {
-      return parseInt(numbersAsArray[0]);
-    }
+    let result = 0;
 
-    return parseInt(numbersAsArray[0]) + parseInt(numbersAsArray[1]);
+    numbersAsArray.forEach(number => {
+      result += parseInt(number);
+    });
+
+    return result;
   }
 }
 

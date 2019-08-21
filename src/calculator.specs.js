@@ -35,6 +35,13 @@ describe('The calculator', () => {
         result.should.equal(6);
       });
     });
+    
+    describe('AND parameter is more than two numbers separated by comma or new line', () => {
+      it('SHOULD return the sum of all numbers', () => {
+        const result = calculator.add("1\n2,3");
+        result.should.equal(6);
+      });
+    });
   });
   
 });
