@@ -28,6 +28,13 @@ describe('The calculator', () => {
         result.should.equal(3);
       });
     });
+
+    describe('AND parameter is more than two numbers separated by comma', () => {
+      it('SHOULD return the sum of all numbers', () => {
+        const result = calculator.add("1,2,3");
+        result.should.equal(6);
+      });
+    });
   });
   
 });
