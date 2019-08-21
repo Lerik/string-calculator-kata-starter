@@ -6,7 +6,7 @@ class Calculator {
       return 0;
     }
 
-    const numbersAsArray = numbers.split(',');
+    const numbersAsArray = numbers.split(/[\n,]/);
 
     let result = 0;
 
