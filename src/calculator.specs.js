@@ -5,14 +5,15 @@ var should = require('chai').should();
 
 describe('The calculator', () => {
     
-    beforeEach(()=> {
-        
+  describe('WHEN adding some number', () => {
+    const calculator = new Calculator();
+
+    describe('AND parameter is empty', () => {
+      it('SHOULD return 0', () => {
+        const result = calculator.add("");
+        expect(result).toEqual(-1);
+      });
     });
-    
-    describe('can add some numbers', () => {
-        it('should accept an empty string and return 0', () => {
-            
-        });
-    });
-   
+  });
+  
 });
