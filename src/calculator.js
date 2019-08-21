@@ -1,8 +1,11 @@
-'use strict';
+"use strict";
 
 class Calculator {
-  add() {
-    return 0;
+  add(number) {
+    if (number.length == 0) {
+      return 0;
+    }
+    return parseInt(number);
   }
 }
 
