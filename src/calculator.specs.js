@@ -14,13 +14,6 @@ describe('The calculator', () => {
         result.should.equal(0);
       });
     });
-
-    describe('AND parameter is one number', () => {
-      it('SHOULD return the same number', () => {
-        const result = calculator.add("1");
-        result.should.equal(1);
-      });
-    });
   });
   
 });

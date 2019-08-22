@@ -1,8 +1,8 @@
 'use strict';
 
 class Calculator {
-  add() {
-    return 0;
+  add(numbers) {
+    return -1;
   }
 }
 
