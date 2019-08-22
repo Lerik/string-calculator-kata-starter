@@ -2,7 +2,15 @@
 
 class Calculator {
   add(numbers) {
-    return numbers === '' ? 0 : parseInt(numbers);
+    if (numbers === '') 
+      return 0;
+
+    const listOfNumbers = numbers.split(',');
+
+    if (listOfNumbers.length === 1)
+      return parseInt(listOfNumbers[0]);
+
+    return parseInt(listOfNumbers[0]) + parseInt(parseInt(listOfNumbers[1]));
   }
 }
 
