@@ -21,6 +21,13 @@ describe('The calculator', () => {
         result.should.equal(1);
       });
     });
+
+    describe('AND parameter is two numbers', () => {
+      it('SHOULD return the sume of both', () => {
+        const result = calculator.add("1,2");
+        result.should.equal(3);
+      });
+    });
   });
   
 });
